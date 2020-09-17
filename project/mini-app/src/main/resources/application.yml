@@ -1,0 +1,48 @@
+server:
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 1000
+    min-spare-threads: 30
+#    basedir: /tpsys/applications/miniapp/basedir
+    max-http-post-size: 300MB
+    max-connections: 650000
+  servlet:
+    context-path: /miniapp
+logging:
+  config: classpath:logback-spring.xml
+
+spring:
+  profiles:   
+    active: dev  # dev|test|prod
+  application:
+    name: miniapp
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 300MB
+  freemarker:
+    checkTemplateLocation: false
+
+mybatis-plus:
+  mapper-locations: classpath*:mappers/*/*.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.mini.cloud.**.modules.**.entity
+  global-config:
+    #数据库相关配置
+    db-config:
+      #主键类型  AUTO:"数据库ID自增", INPUT:"用户输入ID", ID_WORKER:"全局唯一ID (数字类型唯一ID)", UUID:"全局唯一ID UUID";
+      #id-type: AUTO
+      #字段策略 IGNORED:"忽略判断",NOT_NULL:"非 NULL 判断"),NOT_EMPTY:"非空判断"
+      #字段策略 0:"忽略判断",1:"非 NULL 判断"),2:"非空判断"
+      field-strategy: IGNORED
+  #mybatis-plus配置控制台打印完整带参数SQL语句
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+xxl:
+   job:
+      enable: false
+   mq:
+      enable: false
+
+

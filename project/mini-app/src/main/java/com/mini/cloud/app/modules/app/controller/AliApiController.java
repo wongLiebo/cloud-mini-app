@@ -689,6 +689,32 @@ public class AliApiController extends AbstractController {
         }
     }
 
+    /**
+     * 小程序删除
+     * @throws AlipayApiException
+     */
+    @PostMapping("/openMiniVersionDelete")
+    @ApiOperation(value="小程序删除",response = AlipayOpenAuthTokenAppResponse.class)
+    public BaseResult openMiniVersionDelete(@RequestParam("version")String version) throws AlipayApiException {
+        AlipayClient alipayClient = this.getAlipayClient();
+
+        AlipayOpenMiniVersionDeleteRequest request = new AlipayOpenMiniVersionDeleteRequest();
+        request.setBizContent("{" +
+                "\"app_version\":\""+version+"\"," +
+                "\"bundle_id\":\"com.alipay.alipaywallet\"" +
+                "  }");
+        request.putOtherTextParam("app_auth_token", AlipayConstants.APP_AUTH_TOKEN);
+
+        AlipayOpenMiniVersionDeleteResponse response = alipayClient.execute(request);
+        if(response.isSuccess()){
+            System.out.println("调用成功"+JSON.toJSONString(response));
+            return BaseResult.ok(response);
+        } else {
+            System.out.println("调用失败"+JSON.toJSONString(response));
+            return BaseResult.error();
+        }
+    }
+
 
 
 

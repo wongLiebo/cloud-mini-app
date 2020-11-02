@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="en" style="height: auto;z-index: 2000">
+<head>
+    <meta charset="UTF-8">
+    <title>家庭财产综合保险 支付信息</title>
+</head>
+<body style="background:#f1f1f1;font-family:Helvetica;">
+<div style="width: 100%;background-color:#949494;position: relative;z-index: 10;filter:alpha(Opacity=20);-moz-opacity:0.2;opacity: 0.2;">
+
+</div>
+
+
+<div style="width: 600px;height: auto;margin: auto;z-index: 11;position: absolute;left: 0;top:5px;right: 0;bottom: 0;font-size:14px;font-family:Arial,Helvetica,sans-serif;"
+     id="main">
+
+    <div style="width:600px;height:30px;background-color:#4e91d5">
+        <p style="text-align:center;line-height:30px;color:white;height:30px;
+        font-family:Helvetica;-webkit-font-smoothing: antialiased;font-size:15px">支付信息
+    </div>
+
+    <form id="paymentFrom" action="/paymentSit/web/order/select/1015000SX1015000020000001">
+        <input id="provider" type="hidden" name="provider" value="qrCode">
+        <div style="width:600px;height:auto;background:#fff">
+            <div style="width:600px;height:40px;text-align:center">
+                <span style="width:600px;height:40px;line-height:50px;text-align:center;margin:0 auto;">实付金额:¥29</span>
+            </div>
+            <div style="width:560px;height:auto;text-align:center:bolder:1px solid;margin:0 auto">
+                <div style="border-top:1px dashed #CCCCCC;width:100%;height:40px">
+                    <span style="line-height:40px">订&nbsp;&nbsp;单&nbsp;&nbsp;号：</span>
+                    <span style="padding-left:30px;color:#CCCCCC">10150000X1015000020000001</span>
+                </div>
+                <div style="border-top:1px dashed #CCCCCC;width:100%;height:40px">
+                    <span style="line-height:40px">产品名称：</span>
+                    <span style="padding-left:30px;color:#CCCCCC">家庭财产综合保险</span>
+                </div>
+                <div style="border-top:1px dashed #CCCCCC;width:100%;height:40px">
+                    <span style="line-height:40px">保费金额：</span>
+                    <span style="padding-left:30px;color:#CCCCCC">29元</span>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div style="width:600px;height:auto;background:#fff;margin-top:1px">
+        <div style="width:560px;height:auto;text-align:center:bolder:1px solid;margin:0 auto">
+            <div style="width:560px;height:40px;">
+                <span style="color:blue;line-height:40px;padding-left:10px">支付方式</span>
+            </div>
+
+            <div style="width:560px;height:auto;text-align:center:bolder:1px solid;margin:0 auto">
+                    <div style="border-top:1px dashed #CCCCCC;width:100%;height:40px;position:relative;background-color:#f1f1f1;cursor: pointer"
+                         providerName="qrCode" onclick="selectProvider(this)" class="providerD">
+                        <img src="http://test.do4u.com.cn/paymentSit/web/payment/img/qrCode.png"
+                             style="line-height:40px;padding:4px;float:left;">
+                        <span style="padding-left:15px;line-height:40px;">扫码支付</span>
+                        <img src="http://test.do4u.com.cn/paymentSit/web/payment/img/selected.png"
+                             style="position:absolute;right:10px;top:10px;width:20px;height:20px">
+                    </div>
+
+                        <div style="border-top:1px dashed #CCCCCC;width:100%;height:40px;position:relative;cursor: pointer"
+                             providerName="alipay" onclick="selectProvider(this)" class="providerD">
+                            <img src="http://test.do4u.com.cn/paymentSit/web/payment/img/alipay.png"
+                                 style="line-height:40px;padding:4px;float:left;">
+                            <span style="padding-left:15px;line-height:40px;">支付宝</span>
+                            <img src="http://test.do4u.com.cn/paymentSit/web/payment/img/selected.png"
+                                 style="position:absolute;right:10px;top:10px;width:20px;height:20px;display: none">
+                        </div>
+
+                        <div style="border-top:1px dashed #CCCCCC;border-bottom:1px dashed #CCCCCC;width:100%;height:40px;position:relative;cursor: pointer"
+                             providerName="wechat" onclick="selectProvider(this)" class="providerD">
+                            <img src="http://test.do4u.com.cn/paymentSit/web/payment/img/wechat.png"
+                                 style="line-height:40px;padding:4px;float:left;">
+                            <span style="padding-left:15px;line-height:40px;">微信</span>
+                            <img src="http://test.do4u.com.cn/paymentSit/web/payment/img/selected.png"
+                                 style="position:absolute;right:10px;top:10px;width:20px;height:20px;display: none">
+                        </div>
+            </div>
+            <div style="width: 560px;height: 20px;"></div>
+        </div>
+    </div>
+
+    <div style="width:600px;height:auto;margin-top:10px">
+        <div style="width:560px;height:auto;text-align:center:bolder:1px solid;margin:0 auto">
+            <input type="button" value="立即支付" onclick="btnSubmit()"
+                   style="font-size: 18px;color:white;width:560px;height:40px;text-align:center;background:#1878de;outline:none;-webkit-appearance:none;border-radius: 3px;border: none">
+        </div>
+        <div style="width:560px;height:auto;text-align:center:bolder:1px solid;margin:15px auto 0;">
+            <span style="font-size:13px;color:red;">温馨提示：由于各家银行对单日单笔的限额不同，请提前在微信钱包中查看支付限制额度！</span>
+        </div>
+
+        <div style="width:560px;height:30px;text-align:center:bolder:1px solid;margin:0 auto;">
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+
+    function getElementsByClassName(className, root, tagName) {    //root：父节点，tagName：该节点的标签名。 这两个参数均可有可无
+        if (root) {
+            root = typeof root == "string" ? document.getElementById(root) : root;
+        } else {
+            root = document.body;
+        }
+        tagName = tagName || "*";
+        if (document.getElementsByClassName) {                    //如果浏览器支持getElementsByClassName，就直接的用
+            return root.getElementsByClassName(className);
+        } else {
+            var tag = root.getElementsByTagName(tagName);    //获取指定元素
+            var tagAll = [];                                    //用于存储符合条件的元素
+            for (var i = 0; i < tag.length; i++) {                //遍历获得的元素
+                for (var j = 0, n = tag[i].className.split(' '); j < n.length; j++) {    //遍历此元素中所有class的值，如果包含指定的类名，就赋值给tagnameAll
+                    if (n[j] == className) {
+                        tagAll.push(tag[i]);
+                        break;
+                    }
+                }
+            }
+            return tagAll;
+        }
+    }
+
+    function selectProvider(obj) {
+        var providers = getElementsByClassName("providerD");
+        var provider = obj.getAttribute("providerName");
+        document.getElementsByName("provider")[0].value = provider;
+        for (var i = 0; i < providers.length; i++) {
+            if (providers[i].getAttribute("providerName") == provider) {
+                providers[i].style.backgroundColor = "#f1f1f1";
+                providers[i].children[2].style.display = "";
+            } else {
+                providers[i].style.backgroundColor = "";
+                providers[i].children[2].style.display = "none";
+            }
+        }
+    }
+
+
+    function hideLoading() {
+        var doc = window.parent.document
+        var ele;
+        if (!doc.getElementsByClassName) {
+            ele =getElementsByClassName("blockUI")
+        }else{
+            ele=doc.getElementsByClassName("blockUI")
+        }
+        for (var i = 0; i < ele.length; i++) {
+            ele[i].style.display = "none";
+        }
+        var imgLoadings;
+        if (!doc.getElementsByClassName) {
+            imgLoadings =getElementsByClassName("ico_loading32")
+        }else{
+            imgLoadings=doc.getElementsByClassName("ico_loading32")
+        }
+        for (var i = 0; i < imgLoadings.length; i++) {
+            imgLoadings[i].style.display = "none";
+        }
+    }
+    hideLoading();
+
+    function btnSubmit() {
+        var form = document.getElementById("paymentFrom");
+        form.submit();
+    }
+</script>

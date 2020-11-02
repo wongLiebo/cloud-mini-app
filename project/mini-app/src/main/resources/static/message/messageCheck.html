@@ -1,0 +1,280 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>健康告知</title>
+  <link rel="stylesheet" href="http://test.do4u.com.cn/ae/insure/static/personal/pc/css/layout.css">
+  <link rel="stylesheet" href="http://test.do4u.com.cn/ae/insure/static/personal/pc/css/global.css">
+  <link rel="stylesheet" href="http://test.do4u.com.cn/ae/insure/static/family/pc/css/alertTip.css">
+  <link rel="stylesheet" href="http://test.do4u.com.cn/ae/insure/static/public/css/modal.css">
+  <script type="text/javascript" src="http://test.do4u.com.cn/ae/group/public/lib/jquery/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" src="http://test.do4u.com.cn/ae/insure/static/public/js/jquery.popup.pc.js"></script>
+  <script src="http://test.do4u.com.cn/ae/insure/static/public/js/common.js"></script>
+  <script src="http://test.do4u.com.cn/ae/insure/static/public/js/jquery.popup.pc.js?cHVzaA=1594176981"></script>
+  <script src="http://test.do4u.com.cn/ae/insure/static/intelligentUnderwriting/js/healthNotification.js"></script>
+  <style id="tsbrowser_video_independent_player_style" type="text/css">
+    [tsbrowser_force_max_size] {
+      width: 100% !important;
+      height: 100% !important;
+      left: 0px !important;
+      top: 0px !important;
+      margin: 0px !important;
+      padding: 0px !important;
+      transform: none !important;
+    }
+
+    [tsbrowser_force_fixed] {
+      position: fixed !important;
+      z-index: 9999 !important;
+      background: black !important;
+    }
+
+    [tsbrowser_force_hidden] {
+      opacity: 0 !important;
+      z-index: 0 !important;
+    }
+
+    [tsbrowser_hide_scrollbar] {
+      overflow: hidden !important;
+    }
+
+    [tsbrowser_display_none] {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+    }
+
+    [tsbrowser_force_show] {
+      display: black !important;
+      visibility: visible !important;
+      opacity: 0;
+    }
+  </style>
+</head>
+
+<body class="health-body notice-page" marginwidth="0" marginheight="0" style="">
+<div id="page">
+<p class="notice mart20">为了保证您的合法权益，请务必填写真实信息！</p>
+  <div class="item_title"><span class="itL">被保险人健康告知</span></div>
+  <div class="notice-list">
+    <p>1.被保险人是否曾被保险公司解除合同或投保、复效时被拒保、延期或附加条件承保?</p>
+    <p>2.被保险人是否存在下列任一项：<br><span class="list-txt">1)智力障碍、严重视力或听力障碍、脊柱或胸廓畸形，四肢、手足缺损或畸形、瘫痪或植物人状态；</span><br><span
+        class="list-txt">2)成瘾性药物、毒品中毒史；使用镇静剂及其他有毒、有害物质；或曾因饮酒、吸烟过度接受治疗；</span><br><span
+        class="list-txt">3)正在或正计划前往危险地区或国家(如正在或经常发生自然灾害、病疫、战乱、动乱、种族冲突、政局动荡)；</span><br><span
+        class="list-txt">4)体格指数（体重kg/身高m^2）≥32。 5)是否妊娠满8个月或有妊娠异常情况？</span></p>
+    <p>3.被保险人从事的职业类别是否超出<a href="javascript:void(0);" class="download"
+        protocol="webapppath:/file/doc/鼎和财险职业代码及分类表.pdf">《鼎和保险职业类别表》</a>中的1-4类人员？</p>
+    <p>4.被保险人过去二年内是否住院治疗或手术（不包括剖腹产/顺产/鼻炎/急性胃肠炎/单次发作已痊愈的肺炎/上呼吸道感染引起住院）。</p>
+    <p>5.被保险人是否患有或被怀疑患有：<br><span
+        class="list-txt">1)高血压（收缩压达到160mmHg或舒张压达到100mmHg）、心脏病（包括心功能不全II级或II级以上、冠心病、心肌梗塞（梗死）、心肌病）、主动脉血管瘤、脑血管病（包括脑卒中、脑血管畸形）；</span><br><span
+        class="list-txt">2)肝硬化、慢性肝功能衰竭失代偿期、慢性活动性肝炎（包括乙型、丙型病毒性肝炎或携带者）；</span><br><span
+        class="list-txt">3)糖尿病；</span><br><span class="list-txt">4)胰腺疾病（包括胰腺炎、胰腺囊肿或肿瘤）；</span><br><span
+        class="list-txt">5)溃疡性结肠炎、萎缩性胃炎或胃溃疡；</span><br><span
+        class="list-txt">6)肺部疾病（包括肺结核、慢性阻塞性肺病、尘肺、弥漫性肺间质纤维化、呼吸衰竭）；</span><br><span
+        class="list-txt">7)先天性疾病、遗传性疾病；</span><br><span
+        class="list-txt">8)红斑狼疮、肾脏疾病（包括肾萎缩、慢性肾炎、肾功能衰竭、多囊肾、肾切除三年以内）、严重的血液疾病（包括白血病、血友病、再生障碍性贫血，恶性组织细胞病）、神经疾病（包括癫痫、多发性硬化、重症肌无力）；</span><br><span
+        class="list-txt">9)精神科疾病（包括人格障碍、精神分裂症、抑郁症、燥郁症、躁狂症）；</span><br><span
+        class="list-txt">10)脑炎后遗症或脑膜炎后遗症、脑部良性肿瘤、严重脑损伤；</span><br><span class="list-txt">11)阿尔茨海默病、帕金森病；</span><br><span
+        class="list-txt">12)良、恶性肿瘤（含原位癌、白血病、何杰金氏病）；</span><br><span class="list-txt">13)性病、艾滋病及HIV阳性；</span><br><span
+        class="list-txt">14)接受过器官移植；</span><br><span class="list-txt">15)法定传染病甲类或乙类。</span></p>
+    <p>6.被保险人在过去2年内是否存在以下一项或几项检查结果异常：X光、B超、彩超、CT、核磁共振、内窥镜、病理活检、眼底检查？</p>
+    <p>7.被保险人在过去2年内是否存在血液检查异常，并被进一步要求接受检查或治疗？</p>
+    <p>8.被保险人最近6个月是否存在以下症状：反复头晕头痛、咯血、便血、血尿、吞咽困难、胸痛、浮肿、蛋白尿、消瘦（非健身原因所致的体重减轻超过5公斤）、原因不明的发热、疼痛、任何不明性质的肿瘤、肿块、结节、息肉、囊肿、赘生物？
+    </p>
+    <p>9.适用于女性被保险人：是否曾患有葡萄胎或其他妊娠滋养细胞疾病、宫颈不典型增生；半年内存在阴道异常出血、乳头异常溢液、疼痛、糜烂或回缩、乳房表面皮肤凹陷、皱褶或皮肤收缩症状？</p>
+    <p>10.适用于不满2周岁的被保险人：是否出生时体重低于2.5公斤；是否出生时曾有早产、难产、窒息、缺氧等异常情况；是否存在智能低下、发育迟缓、脑瘫、反复惊厥、抽搐等情况？</p>
+  </div>
+  <div class="notice-bottom">
+    <p class="bottom-tit">投保人应在所有被保险人健康/职业状况充分了解的基础上履行如实告知义务。投保人承诺完全知晓所有被保险人健康/职业状况，并如实告知。<br>
+      若被保险人健康/职业状况与告知内容不符：<br>
+      　　（1）一经发现，本公司将依据法律解除合同。<br>
+      　　（2）若发生保险事故，本公司不承担赔偿或给付保险金责任，并将依据法律解除合同，同时根据投保人不如实告知情况不退还保险费。
+    </p>
+    <div class="notice-btn">
+      <!--<p class="pre-btn">上一步</p>-->
+      <p class="btn-atup">部分情况有或不确定</p>
+      <p class="allno-btn">以上情况全无</p>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+<div id="snapPicture"></div>
+  <div class="modal-box" id="modalContent" style="display: none;">
+    <div class="modal-container">
+      <div class="modal-nav">
+        <div>温馨提示</div>
+        <div onclick="modalHide()" style="cursor: pointer;">X</div>
+      </div>
+      <div class="modal-content">
+        <p>健康告知异常需填写问卷，如所患疾病或健康异常不在疾病列表中则不能投保。</p>
+        <p class="modal_p">投保人承诺完全知晓被保人健康职业状况，并如实告知。</p>
+        <p>若被保险人健康职业状况与告知不符 :</p>
+        <div class="modal-content_sel">
+          <p>（1）一经发现，本公司将依据法律解除合同。 </p>
+          <p>（2）若发生保险事故，本公司不承担则赔偿或给付保险金的责任，
+            并将依据法律解除合同，同时根据投保人不如实告知情况可能不退还保险费。</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div style="cursor:pointer" onclick="modalHide()">重新选择</div>
+        <div style="cursor:pointer" onclick="comfirmNotice()">确认</div>
+        <div style="cursor:pointer" onclick="goBack()">放弃</div>
+      </div>
+    </div>
+  </div>
+  <!-- <iframe src="./messageItemView.html" frameborder="0"></iframe> -->
+  <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script> 
+  
+  <script src="/webeye/sdk/webrecord.js?token=test_img_20200718"></script>
+  <script defer>
+    $(function () {
+      
+     WebEye.record({
+          nodeCode: "HealthInform",
+          pageId: "HealthInform_6102_v3",
+          productCode: "6102_v3",
+          productName:"安康福医疗险",
+          userId: "test_img"
+        }).start(); 
+      } )
+
+      
+  
+function capture1 () {
+    	    WebEye.capture("HealthInform");
+    }
+    function another1() {
+        WebEye.start("ClauseBrowse");
+      }
+    function capture2 () {
+    	  WebEye.capture("ClauseBrowse");
+    }
+
+    
+    function dataURItoBlob (base64Data) {
+        var byteString;
+        if (base64Data.split(',')[0].indexOf('base64') >= 0)
+            byteString = atob(base64Data.split(',')[1]);
+        else
+            byteString = unescape(base64Data.split(',')[1]);
+        var mimeString = base64Data.split(',')[0].split(':')[1].split(';')[0];
+        var ia = new Uint8Array(byteString.length);
+        for (var i = 0; i < byteString.length; i++) {
+            ia[i] = byteString.charCodeAt(i);
+        }
+        return new Blob([ia], {type: mimeString});
+    };
+
+/*     function append(data) {
+      alert(1111);
+      $("body").append("<script>" + data.msg + "<\/script>");
+      WebEye.test({ stepCode: "123", stepName: "一二三", ordernum: "234", dom: "#snap" })
+      WebEye.record({
+        token: "b61fe967-5181-4a94-9cfa-ef3ecdbf919b",
+        orderId: "0111021401",
+        pageId: "test",
+        nodeCode: "ckxz",
+        productCode: "PRODUCT123",
+        productName: "安康福",
+        userId: "8888",
+        consumerID: "admin",
+        consumerPWD: "admin123"
+      }).start();
+
+    } */
+
+
+
+
+    /*   setTimeout(function(){
+        stopCheckevents = rrweb.record({
+        emit(event) {
+          // push event into the events array
+          console.log(event);
+          Checkevents.push(event);
+        },
+      });
+ 
+      },1000) */
+
+
+    /*  $.ajax({url:"/eye/recallmanage/add",type:"post",async:false,
+         data:{
+           type:"ckxz",
+           projectname:"安康福医疗险",ordernum:timestramp,policynum:"T2020441000045612",address:ipAddress
+         }
+       ,dataType: 'json'}); */
+
+
+
+
+    var Checkevents = [];
+    var stopCheckevents;
+    // alert(window.location.search)
+    var timestramp = window.location.search.substring(1);
+    var ipAddress = returnCitySN["cip"] + ',' + returnCitySN["cname"];
+
+    /* var iframe = document.createElement('iframe'); 
+    iframe.src="./messageItemView.html?"+timestramp;  
+    document.body.appendChild(iframe); */
+    //录屏操作
+
+
+
+
+
+
+
+
+    $('.btn-atup').click(function () {
+      $('#modalContent').show();
+    })
+    $('.allno-btn').click(function () {
+      $('#modalContent').show();
+    })
+    function modalHide() {
+      $('#modalContent').hide();
+    }
+
+    function comfirmNotice() {
+    	
+       WebEye.capture("ClauseBrowse");
+       window.open('/message/messageImport.html' , '_self');
+
+    }
+    function goBack() {
+      window.open('/message/messageindex.html', '_self');
+
+      stopCheckevents();//停止录屏并存储录屏的数据；
+      var d = JSON.stringify(Checkevents);
+
+
+
+      // if (!window.localStorage) {
+      //   alert("浏览器不支持localStorage");
+      //   return false;
+      // } else {
+      //   var storage = window.localStorage;
+      //   var data = {
+      //     "Checkevents": Checkevents
+      //   }
+      //   var d = JSON.stringify(data);
+      //   //三种存取值的方式，官方推荐使用setItem/getItem存取值
+      //   //修改则是直接将对应的storage值覆盖
+      //   //存
+      //   storage.setItem("Checkevents", d);
+
+      // }
+
+
+
+
+    }
+  </script>
+</body>
+
+</html>

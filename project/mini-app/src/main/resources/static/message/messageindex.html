@@ -1,0 +1,836 @@
+<html lang="zh-CN">
+
+<head>
+	<title>安康福医疗险</title>
+	<!--[if IE 7]>
+    <meta http-equiv="x-ua-compatible" content="ie=7"/>
+    <![endif]-->
+	<!--[if IE 8]>
+    <meta http-equiv="x-ua-compatible" content="ie=8"/>
+    <![endif]-->
+	<!--[if IE 9]>
+    <meta http-equiv="x-ua-compatible" content="ie=9"/>
+    <![endif]-->
+	<meta charset="UTF-8">
+	<meta name="renderer" content="webkit">
+	<link rel="stylesheet" href="//test.do4u.com.cn/ae/insure/static/personal/pc/css/global.css">
+	<link rel="stylesheet" href="//test.do4u.com.cn/ae/insure/static/personal/pc/css/layout.css">
+	<link rel="stylesheet" href="//test.do4u.com.cn/ae/insure/static/family/pc/css/alertTip.css">
+	<link rel="stylesheet" href="js/plugins/rrweb/rrweb.min.css" type="text/css">
+	<link rel="stylesheet" href="js/plugins/rrweb/rrwebStyle.css" type="text/css">
+	<style>
+		.ylbx-form-wrapper .toubao-btn-test {
+			display: block;
+			border-radius: 6px;
+			width: 200px;
+			height: 48px;
+			margin: 16px auto 0;
+			background: #006ab6;
+			font-size: 14px;
+			color: rgb(255, 255, 255);
+			line-height: 48px;
+			text-align: center;
+		}
+
+		.alert {
+			display: none !important;
+		}
+	</style>
+
+	<script type="text/javascript" src="//test.do4u.com.cn/ae/insure/static/personal/pc/js/jquery-1.11.2.min.js"></script>
+	<!--日期控件-->
+	<script src="//test.do4u.com.cn/ae/insure/static/personal/pc/js/My97DatePicker/WdatePicker.js"></script>
+	<link href="js/My97DatePicker/skin/WdatePicker.css" rel="stylesheet" type="text/css">
+
+
+
+	<script>
+		$(document).ready(function () {
+			// 动态调整保障条款的高度
+			var len = $(".studentInsure_tips ul li").length;
+			var tipHeight = 115 + 60 * len;
+			$(".studentInsure_tips").css("height", tipHeight + "px");
+
+			$('#menu').find('li').on('click', function () {
+				$(this).addClass('act').siblings().removeClass('act');
+				var iTop = $('#item_a_' + $(this).index()).offset().top;
+				$.scrollTop(iTop);
+			});
+
+			$('#item_a_4').find('h5').on('click', function () {
+				if ($(this).parent().hasClass('act')) {
+					$(this).siblings('div').slideUp(300).parent().removeClass();
+				} else {
+					$(this).siblings('div').slideDown(300).parent().addClass('act').siblings('.act').removeClass().find('div').slideUp(300);
+				}
+			});
+
+			// 根据#滚动到指定栏目
+			var url = window.location.href;
+			if (url.indexOf("#") != -1) {
+				var index = parseInt(url.substring(url.indexOf("#") + 1));
+				var li = $($('#menu').find('li').get(index));
+				li.trigger("click");
+			}
+		});
+	</script>
+
+	<style id="tsbrowser_video_independent_player_style" type="text/css">
+		[tsbrowser_force_max_size] {
+			width: 100% !important;
+			height: 100% !important;
+			left: 0px !important;
+			top: 0px !important;
+			margin: 0px !important;
+			padding: 0px !important;
+			transform: none !important;
+		}
+
+		[tsbrowser_force_fixed] {
+			position: fixed !important;
+			z-index: 9999 !important;
+			background: black !important;
+		}
+
+		[tsbrowser_force_hidden] {
+			opacity: 0 !important;
+			z-index: 0 !important;
+		}
+
+		[tsbrowser_hide_scrollbar] {
+			overflow: hidden !important;
+		}
+
+		[tsbrowser_display_none] {
+			display: none !important;
+			visibility: hidden !important;
+			opacity: 0 !important;
+		}
+
+		[tsbrowser_force_show] {
+			display: black !important;
+			visibility: visible !important;
+			opacity: 0;
+		}
+	</style>
+</head>
+
+<body class="quote" marginwidth="0" marginheight="0">
+	<script>
+		$(document).ready(function () {
+
+		 
+			$(".all-wrapper .select p").click(function (e) {
+				$(".all-wrapper .select").toggleClass('open');
+				e.stopPropagation();
+			});
+
+			$(".all-wrapper .select ul li").on("click", function (e, initFlag) {
+				var _this = $(this),
+					ageRange = _this.attr("data-value");
+				$(".all-wrapper .select > p").text(_this.text());
+
+				_this.addClass("Selected").siblings().removeClass("Selected");
+				$(".all-wrapper .select").removeClass("open");
+				e.stopPropagation();
+
+				$("[name='ageRange']").val(ageRange);
+				if (!initFlag) {
+					$("[name='ageRange']").trigger("change");
+				}
+
+				if (ageRange == '0-4' || ageRange == '5-10' || ageRange == '11-15') {
+					$("#southNetworkStaff").removeAttr('checked');
+					$("#notSouthNetworkStaff").click();
+					$(".flag input").attr('disabled', true);
+				} else {
+					$(".flag input").attr('disabled', false);
+				}
+			});
+
+			$(document).on('click', function () {
+				$(".all-wrapper .select").removeClass("open");
+			})
+
+
+			//条款名词解释
+			$("#baseclause, #quoteForm").find('.explain').mouseout(function () {
+				$(this).siblings('.exrlain-txt').hide();
+			});
+			$("#baseclause, #quoteForm").find('.explain').mouseover(function () {
+				$(this).siblings('.exrlain-txt').show();
+			});
+
+			// 保险条款点击滚动到保险条款处
+			$("#itemkindLink").on("click", function () {
+				$($('#menu li').get(5)).trigger('click');
+			});
+
+
+		});
+	</script>
+
+	<header id="header">
+	</header>
+	<div id="snapPicture"></div>
+
+	<div class="content" id="content" >
+	
+		<div class="menu_home">
+			<h1>安康福医疗险</h1>
+			<aside><sub>￥</sub>160元 <sub>起</sub></aside>
+			<ul id="menu">
+				<li class="act">产品特点</li>
+				<li>保障利益</li>
+				<li>产品介绍</li>
+				<li>理赔流程</li>
+				<li>常见问题</li>
+				<li>保障条款</li>
+			</ul>
+			<a href="javascript:$('.toubao-btn').trigger('click');" class="buy">我要购买</a>
+		</div>
+		<section id="item_a_0">
+			<div style="position: relative">
+				<img src="http://test.do4u.com.cn/ae/insure/static/personal/pc/imgs/ylbx-banner.png" width="1200"
+					height="439" alt="">
+				<form class="ylbx-form-wrapper validateForm" id="quoteForm" novalidate="novalidate">
+					<h2 class="title">填写被保险人信息</h2>
+					<div class="item">
+						<span class="item-title">有无社保
+							<i class="explain"></i>
+							<div class="explaintxt exrlain-txt" style="display: none;">
+								<i></i>
+								<p>本产品中的社保指社会医疗保险，包括新型农村合作医疗、城镇职工基本医疗保险、城镇居民基本医疗保险等政府举办的医疗保险项目。</p>
+							</div>
+						</span>
+						<div class="radio-wrapper">
+							<input type="radio" id="hasSocialSecurity" name="socialSecurity" value="1"
+								class="regular-radio doInsured required" checked="">
+							<label class="radio-label" for="hasSocialSecurity" id="hasSocialSecurityLabel"><i
+									class="select-icon"></i></label>&nbsp;&nbsp;有
+						</div>
+						<div class="radio-wrapper">
+							<input type="radio" id="noSocialSecurity" name="socialSecurity" value="0"
+								class="regular-radio doInsured required">
+							<label class="radio-label" for="noSocialSecurity"><i
+									class="select-icon"></i></label>&nbsp;&nbsp;无
+						</div>
+					</div>
+					<div class="item flag">
+						<span class="item-title">南网员工
+							<i class="explain"></i>
+							<div class="explaintxt exrlain-txt" style="display: none;">
+								<i></i>
+								<p>南方电网公司及三产单位员工。</p>
+							</div>
+						</span>
+						<div class="radio-wrapper">
+							<input type="radio" id="southNetworkStaff" name="factor.isNWUser" value="1"
+								class="regular-radio doInsured yesinput required">
+							<label class="radio-label" for="southNetworkStaff" id="southNetworkStaffLabel"><i
+									class="select-icon"></i></label>&nbsp;&nbsp;是
+						</div>
+						<div class="radio-wrapper">
+							<input type="radio" id="notSouthNetworkStaff" name="factor.isNWUser" value="0"
+								class="regular-radio doInsured noinput required" checked="checked">
+							<label class="radio-label" for="notSouthNetworkStaff"><i
+									class="select-icon"></i></label>&nbsp;&nbsp;否
+						</div>
+					</div>
+
+					<div class="item">
+						<span class="item-title">生效日期</span>
+						<div class="all-wrapper">
+							<input type="text" class="input required" name="policy.startDate">
+							<input type="text" class="input" name="policy.endDate" style="display: none;">
+						</div>
+					</div>
+					<div class="item">
+						<span class="item-title">年　　龄</span>
+						<div class="all-wrapper">
+							<div class="select input">
+								<p>26-30周岁</p>
+								<ul>
+									<li data-value="0-4">30天-4周岁</li>
+									<li data-value="5-10">5-10周岁</li>
+									<li data-value="11-15">11-15周岁</li>
+									<li data-value="16-20">16-20周岁</li>
+									<li data-value="21-25">21-25周岁</li>
+									<li data-value="26-30" class="Selected">26-30周岁</li>
+									<li data-value="31-35">31-35周岁</li>
+									<li data-value="36-40">36-40周岁</li>
+									<li data-value="41-45">41-45周岁</li>
+									<li data-value="46-50">46-50周岁</li>
+									<li data-value="51-55">51-55周岁</li>
+									<li data-value="56-60">56-60周岁</li>
+									<li data-value="61-65">61-65周岁</li>
+									<li data-value="66-70">66-70周岁</li>
+									<li data-value="71-75">71-75周岁</li>
+									<li data-value="76-80">76-80周岁</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="item">
+						<div class="price-wrapper">
+							保费：<span class="price">280</span>元
+						</div>
+					</div>
+					<div class="item tip-wrapper">
+						<div class="checkbox">
+							<input type="checkbox" id="readMeChk">
+							<label for="readMeChk"></label>
+						</div>
+						已阅读
+						<a id="insurenotice" href="javascript:void(0)" class="link open-popup-btn"
+							data-popup="tbxz">《投保须知》</a>和
+						<a id="itemkindLink" href="javascript:void(0);" class="link">《保险条款》</a>了解更多保险详情
+					</div>
+
+					<a href="javascript:void(0)" class="toubao-btn-test">立即投保</a>
+
+					<!-- 条款信息隐藏域 -->
+					<div id="itemKindsDiv" style="display: none;">
+						<div ref-kindcode="621001_0002"><input type="text" name="itemKind[0].kindCode"
+								value="621001_0002"><input type="text" name="itemKind[0].kindName"
+								value="中高端医疗保险条款_重大疾病保险金"><input type="text" name="itemKind[0].type"
+								value="Y21000"><input type="text" name="itemKind[0].insured" value="3000000"><input
+								type="text" name="itemKind[0].premiums" value="1"><input type="text"
+								name="itemKind[0].rate" value="0"></div>
+						<div ref-kindcode="621001_0001"><input type="text" name="itemKind[1].kindCode"
+								value="621001_0001"><input type="text" name="itemKind[1].kindName"
+								value="中高端医疗保险条款_医疗定额保险金"><input type="text" name="itemKind[1].type"
+								value="Y21000"><input type="text" name="itemKind[1].insured" value="3000000"><input
+								type="text" name="itemKind[1].premiums" value="1"><input type="text"
+								name="itemKind[1].rate" value="0"></div>
+						<div ref-kindcode="621001_0003"><input type="text" name="itemKind[2].kindCode"
+								value="621001_0003"><input type="text" name="itemKind[2].kindName"
+								value="中高端医疗保险条款_重大疾病住院津贴保险金"><input type="text" name="itemKind[2].type"
+								value="Y21000"><input type="text" name="itemKind[2].insured" value="36000"><input
+								type="text" name="itemKind[2].premiums" value="1"><input type="text"
+								name="itemKind[2].rate" value="0"></div>
+					</div>
+					<!-- 隐藏字段 -->
+					<input type="hidden" name="thirdUserFlag" value="0">
+					<input type="hidden" name="thirdAppId" value="fff4fbe4c3c31950ba0517054wxid01">
+					<input type="hidden" name="subDataSource" value="10001000">
+					<input type="hidden" name="client" value="pc">
+
+					<input type="hidden" name="productCode" value="6210_v3">
+					<input type="hidden" name="planCode" value="6210_v3">
+					<input type="hidden" name="dataId" value="">
+					<input type="hidden" name="ageRange" value="26-30" class="doInsured">
+					<input type="hidden" name="factor.areaCode">
+					<input type="hidden" name="insuredPrice" value="6036000">
+					<input type="hidden" name="premiumPrice" value="280">
+					<input type="hidden" class="isHandlerUser" id="isHandlerUser" value="0">
+
+				</form>
+			</div>
+
+		</section>
+		<section id="item_a_1">
+			<!--<h2>保障利益</h2>-->
+			<table class="table-wrapper" id="baseclause">
+				<tbody>
+					<tr>
+						<td width="50%"></td>
+						<td width="50%">安康福医疗险</td>
+					</tr>
+					<tr>
+						<td width="50%" class="explain exshow">一般医疗保险金<i class="explain"></i>
+							<div class="explaintxt exrlain-txt" style="display: none;">
+								<i></i>
+								<p>因遭受意外伤害事故或在等待期后因患疾病，在二级及以上公立医院普通部接受治疗的，保险人对住院医疗费用、特殊门诊医疗费用、门诊手术医疗费用、住院前后门急诊医疗费用，按照合同的约定承担给付一般医疗保险金的责任。
+								</p>
+							</div>
+						</td>
+						<td width="50%"><span class="red">300万</span></td>
+
+					</tr>
+					<tr>
+						<td width="50%" class="explain exshow">恶性肿瘤+5种重大疾病医疗保险金<i class="explain"></i>
+							<div class="explaintxt2 exrlain-txt" style="display: none;">
+								<i></i>
+								<p>被保险人在等待期后经医院初次确诊罹患恶性肿瘤、急性心肌梗塞、脑中风后遗症、重大器官移植术或造血干细胞移植术、冠状动脉搭桥术、终末期肾病，并在二级及以上公立医院普通部接受治疗的，在一般医疗保险金累计给付达到保险金额后依照合同约定给付住院医疗费用、特殊门诊医疗费用、门诊手术医疗费用、住院前后门急诊医疗费用。
+								</p>
+							</div>
+						</td>
+						<td width="50%"><span class="red">300万</span></td>
+					</tr>
+					<tr>
+						<td width="50%" class="explain exshow">重大疾病住院津贴保险金<i class="explain"></i>
+							<div class="explaintxt3 exrlain-txt" style="display: none;">
+								<i></i>
+								<p>被保险人在等待期后经医院初次确诊罹患重大疾病，并在医院接受治疗，根据被保险人的每次合理住院天数，保险人依照合同约定计算并给付重大疾病住院津贴保险金。</p>
+							</div>
+						</td>
+						<td width="50%"><span class="red">200元/天</span></td>
+					</tr>
+					<tr>
+						<td width="50%">就医绿色通道</td>
+						<td width="50%">5个工作日内预约三甲医院专家和陪诊陪护服务</td>
+					</tr>
+					<tr>
+						<td width="50%">年免赔额</td>
+						<td width="50%">1万元/年,等待期后首次确诊罹患约定的重大疾病且住院，对于自确诊重大疾病之日起所发生的符合本合同约定的医疗费用<span
+								class="red-strong-text">0免赔</span></td>
+					</tr>
+					<tr>
+						<td width="50%">保障期限</td>
+						<td width="50%"><span class="red">1年</span></td>
+					</tr>
+				</tbody>
+			</table>
+
+		</section>
+		<section id="item_a_2">
+			<!--<h2>投保指引</h2>-->
+			<div class="server-wrapper clearfix">
+				<div class="server-content fl">
+					<img src="//test.do4u.com.cn/ae/insure/static/personal/pc/imgs/ylbx-server01.jpg" width="888"
+						class="server-detail" style="display: block">
+					<img src="//test.do4u.com.cn/ae/insure/static/personal/pc/imgs/ylbx-server02.jpg" width="888"
+						class="server-detail" style="display: none">
+					<img src="//test.do4u.com.cn/ae/insure/static/personal/pc/imgs/ylbx-server03.jpg" width="888"
+						class="server-detail" style="display: none">
+					<div class="server-detail" style="display: none">
+						<img src="//test.do4u.com.cn/ae/insure/static/personal/pc/imgs/ylbx-server04.jpg" width="888">
+						<a href="//test.do4u.com.cn/ae/insure/static/personal/pc//shop/sycp/health.html?id=bwyl"
+							class="green-channel-link" target="_blank">重疾就医绿通＞</a>
+					</div>
+					<img src="//test.do4u.com.cn/ae/insure/static/personal/pc/imgs/ylbx-server05.jpg" width="888"
+						class="server-detail" style="display: none">
+				</div>
+				<div class="server-nav fr">
+					<a href="javascript:void(0);" class="server-item active">
+						<img src="//test.do4u.com.cn/ae/insure/static/personal/pc/imgs/ylbx-server01-icon.png" alt="">
+					</a>
+					<a href="javascript:void(0);" class="server-item">
+						<img src="//test.do4u.com.cn/ae/insure/static/personal/pc/imgs/ylbx-server02-icon.png" alt="">
+					</a>
+					<a href="javascript:void(0);" class="server-item">
+						<img src="//test.do4u.com.cn/ae/insure/static/personal/pc/imgs/ylbx-server03-icon.png" alt="">
+					</a>
+					<a href="javascript:void(0);" class="server-item">
+						<img src="//test.do4u.com.cn/ae/insure/static/personal/pc/imgs/ylbx-server04-icon.png" alt="">
+					</a>
+					<a href="javascript:void(0);" class="server-item">
+						<img src="//test.do4u.com.cn/ae/insure/static/personal/pc/imgs/ylbx-server05-icon.png" alt="">
+					</a>
+				</div>
+			</div>
+		</section>
+
+		
+		<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script> 
+ 
+		<script>
+
+
+			/* function getJsMessage(token) {
+				$.ajax({
+					url: "/webeye/sdk/webrecord.js?token="+token, type: "get", async: false,
+					success: function (res) {
+						if(res.msg!==undefined){
+						   
+							return false;
+						} else {
+							$("body").append("<script>"+data+"<\/script>");
+							return true;
+						}
+					    
+					},
+					error:function(res) {
+					    
+						return false;
+					}
+				  })
+			}
+			
+			
+			if(getJsMessage("fd92437c-68b0-46b8-8ae8-e8135111a38c")){
+				WebEye.record({ productCode: "1234", productName: "安康福医疗险", nodeId: "ckxz", userId: "2345", orderId: "12345" ,token:""}).start(); 
+				
+			}else {
+				alert("token 不匹配");
+			} */
+
+			// 	var viewProevents = [];
+			// 	var stopViewProevents;
+			// 	var timestramp="";
+			// 	if(window.location.search.substring(1)!=="") {
+			// 		timestramp = window.location.search.substring(1);
+			// 	} else {
+			// 		timestramp = new Date().getTime();
+
+			// 	}
+
+			// 	console.log(timestramp);
+			// 	var ipAddress = returnCitySN["cip"]+','+returnCitySN["cname"];
+
+
+			// 	//录屏操作
+			// 	$(function () {
+			// 		setTimeout(function(){
+			// 			stopViewProevents = rrweb.record({
+			// 			emit(event) {
+			// 				// push event into the events array
+			// 				console.log(event);
+			// 				event.timestamp = new Date(event.timestamp).getTime();
+			// 				viewProevents.push(event);
+			// 			},
+			// 		});
+			// 		},1000);
+
+			// 		$.ajax({url:"/eye/recallmanage/add",type:"post",async:false,
+			//   data:{
+			//     type:"cpll",
+			//     projectname:"安康福医疗险",ordernum:timestramp,policynum:"T2020441000045612",address:ipAddress
+			//   }
+			// ,dataType: 'json'});
+
+
+
+
+
+			// 	});
+			function dataURItoBlob (base64Data) {
+        var byteString;
+        if (base64Data.split(',')[0].indexOf('base64') >= 0)
+            byteString = atob(base64Data.split(',')[1]);
+        else
+            byteString = unescape(base64Data.split(',')[1]);
+        var mimeString = base64Data.split(',')[0].split(':')[1].split(';')[0];
+        var ia = new Uint8Array(byteString.length);
+        for (var i = 0; i < byteString.length; i++) {
+            ia[i] = byteString.charCodeAt(i);
+        }
+        return new Blob([ia], {type: mimeString});
+    };
+
+function capture1 () {
+  //WebEye.capture("InsurePrompt");
+    	html2canvas(document.body, {
+            useCORS: true,
+            allowTaint: false
+        }).then(canvas => {
+        $('#snapPicture')[0].appendChild(canvas);
+    	 var base64Data = canvas.toDataURL("image/jpeg", 1.0);
+            //封装blob对象
+            var blob = dataURItoBlob(base64Data); 
+            //组装formdata
+            var fd = new FormData();
+			fd.append("imageFile", blob);//fileData为自定义
+			fd.append("token", "test_final");
+            fd.append("nodeCode", "ProductBrowse");
+   
+               
+        
+            
+           $.ajax({
+                url: "/webeye/app/saveImage", type: "post",
+                data: fd ,processData: false,
+                contentType: false, success: function (res) {
+                    console.log(res)
+                    if (res.code !== 0) {
+                        alert(res.msg);
+                    } 
+                }
+                , error: function () {
+                    alert("数据存储失败，请刷新后重试");
+                    return null;
+                }
+            }); 
+          
+            
+            console.log(canvas);
+           
+            // document.body.appendChild(canvas)
+            //后台保存canvas数据
+        });
+    }
+
+
+			//查看条款
+
+			function download() {
+				window.open('./messageItemView.html?' + timestramp, '_blank');
+			}
+
+
+			//立即投保
+			$('.toubao-btn-test').click(function () {
+				WebEye.capture("ProductBrowse");
+				window.open('/message/messageCheck.html?', '_self');
+				//window.open('/message/messageCheck.html','_self');
+
+
+
+
+
+
+			})
+
+			$('.server-wrapper .server-item').on('click', function () {
+				var index = $(this).index()
+				$(this).addClass('active').siblings().removeClass('active')
+				$('.server-detail').hide()
+				$('.server-detail')[index].style.display = 'block'
+			})
+		</script>
+		<div style="clear: both"></div>
+		<section id="item_a_3">
+			<h2>理赔流程</h2>
+			<p>&nbsp;<img alt="" width="1200" height="210"
+					src="//test.do4u.com.cn/ae/insure/static/family/pc/imgs/lplc.jpg">&nbsp;</p>
+			<div class="text-wrapper">
+				<b>索赔材料：</b>
+				<p>保险金申请人向保险人申请给付保险金时，应提供如下材料：</p>
+				<p>（1）保险金给付申请书</p>
+				<p>（2）申请人的有效身份证件</p>
+				<p>（3）支持索赔的全部账单、证明、信息和证据，包括但不限于医院出具的病历资料、医学诊断书、处方、病理检查、化验检查报告、医疗费用原始单据、费用明细单据等。保险金申请人因特殊原因不能提供上述材料的，应提供其它合法有效的材料。
+				</p>
+				<p>（4）申请人所能提供的其他与确认保险事故的性质、原因等有关的其他证明和资料。</p>
+				<p>（5）若保险金申请人委托他人申请的，还应提供授权委托书原件、委托人和受托人的身份证明等相关证明文件。</p>
+				<b>保险金申请人未能提供有关材料，导致保险人无法核实该申请的真实性的，保险人对无法核实部分不承担给付保险金的责任。</b>
+				<p>在保险人的理赔审核过程中，保险人有权并在合理的范围内对索赔的被保险人进行医疗检查。此外，保险人应有权在法律允许情况下，要求尸检检验。此类检验费用由保险人承担。在拒赔的情形下，保险人将承担因投保人提供索赔要求所必需的证明、收据、信息和证据而产生的费用。
+				</p>
+			</div>
+
+		</section>
+		<section id="item_a_4" class="qq_4">
+			<h2>常见问题</h2>
+			<ul>
+				<li>
+					<h5>本产品的投保年龄是多少？</h5>
+					<div>
+						<p>首次投保本产品的客户，年龄限制为：出生满30天-60周岁。本合同期满，投保人可向保险人申请续保本合同，投保人续保本合同须经保险人审核同意，最高可续保至80周岁。</p>
+					</div>
+				</li>
+				<li>
+					<h5>在哪些医院接受治疗可以获得理赔？</h5>
+					<div>
+						<p>被保险人因意外伤害或者疾病在中华人民共和国境内（不含港、澳、台地区）二级及以上公立医院普通部接受住院、住院前7天后7天门急诊、特殊门诊、门诊手术治疗的，我们报销您需个人支付的、必需且合理的医疗费用。
+						</p>
+					</div>
+				</li>
+				<li>
+					<h5>本产品的等待期是多久？</h5>
+					<div>
+						<p>被保险人首次投保或非续保时，本合同约定的重大疾病等待期为60天，但甲状腺、扁桃体、疝气、女性生殖系统疾病的检查与治理等待期为90天，其他责任等待期为30天，意外医疗及续保无等待期。
+						</p>
+					</div>
+				</li>
+				<li>
+					<h5>之前购买的其他公司医疗险产品即将到期，今年购买本产品，会有等待期吗？</h5>
+					<div>
+						<p>被保险人持其他保险公司医疗险保单（指保险责任包含但不限于一般住院医疗费用和恶性肿瘤、重大疾病住院费用且保额100万及以上的），无任何理赔记录，且在投保本产品时，被保险人符合本产品的健康告知，其已经度过的等待期天数可累积到本产品约定的等待期内计算。
+						</p>
+					</div>
+				</li>
+				<li>
+					<h5>等待期的减、免政策如何规定的？</h5>
+					<div>
+						<p>被保险人持其他保险公司医疗险保单（指保险责任包含但不限于一般住院医疗费用和恶性肿瘤、重大疾病住院费用且保额100万及以上的），无任何理赔记录，且在投保本产品时，被保险人符合本产品的健康告知，其已经度过的等待期天数可累积到本产品约定的等待期内计算。
+						</p>
+					</div>
+				</li>
+				<li>
+					<h5>年免赔额1万元，怎么理解？</h5>
+					<div>
+						<p>本产品免赔额为每人1万元/年，指在本合同保险期间内，应由被保险人自行承担，本合同不予赔付的部分。社保个人账户支付的金额和通过其他途径(包括被保险人的工作单位、保险人在内的任何商业保险机构)已报销赔付部分可计入免赔额，但社保统筹或公费医疗报销部分不能计入免赔额。若被保险人在等待期后经医院初次确诊罹患本合同约定的重大疾病且在医院接受住院治疗的，对于自确诊重大疾病之日起所发生的符合本合同约定的全部医疗费用，保险人在给付保险金时，不再扣除免赔额。
+						</p>
+					</div>
+				</li>
+				<li>
+					<h5>所有的费用都可以报销吗？</h5>
+					<div>
+						<p>鼎和致力于提供人人买的起的医疗保险，等待期后被保险人因意外伤害或者疾病在中华人民共和国境内（不含港、澳、台地区）二级及以上公立医院普通部接受住院、住院前7天后7天门急诊、特殊门诊、门诊手术治疗的，我们按照合同约定报销您需个人支付的、必需且合理的医疗费用。
+						</p>
+					</div>
+				</li>
+				<li>
+					<h5>哪些情况可以没有免赔额？</h5>
+					<div>
+						<p>若被保险人在保险期间内初次确认罹患恶性肿瘤+条款约定的5种重大疾病且接受住院治疗的，对于自确诊之日起剩余保单年度内发生的所有医疗费用，在计算保险金时不再扣除免赔额。</p>
+					</div>
+				</li>
+				<li>
+					<h5>门诊费用可以报销吗?</h5>
+					<div>
+						<p>门诊手术、住院前7天后7天的门急诊、特殊门诊（恶性肿瘤化学疗法、放射疗法、免疫疗法、内分泌疗法、靶向疗法的治疗费用以及器官移植后的门诊抗排异治疗费用）费用均可报销。保险期间最高报销金额和住院费用合计300万元，如果因恶性肿瘤+条款约定的5种重大疾病接受治疗最高报销金额和住院费用合计600万元。除上述门诊，其他情况在门诊治疗的费用仍需要被保险人自己支付。
+						</p>
+					</div>
+				</li>
+				<li>
+					<h5>投保前已经生的病可以报销么？</h5>
+					<div>
+						<p>不可以。为了使大家可以用最优的保费获得最高的保障，在发生疾病时真正获得高额医疗费用报销，本险种不接受带病投保的行为。首次投保前已患有的疾病以及症状，均不属于保障范围。</p>
+					</div>
+				</li>
+			</ul>
+		</section>
+
+		<section id="item_a_5" class="qq_5">
+			<h2>保障条款</h2>
+			<div class="studentInsure_tips" style="height: 175px;">
+				<ul>
+					<li class="itemLi">
+						<div class="itemLabel itemDesc">
+							鼎和财险个人医疗保险（2018版）条款（注册编号：C00012932512018080306541）:
+							<br>
+						</div>
+						<div class="download-wrapper">
+							<a href="javascript:void(0);" onclick="download()">
+								<img src="http://www.edhic.com/upload/cms/shop/201509/08201907dp1q.png" alt="">
+							</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<div class="tips">
+			<span>温馨提示：</span>出险后请及时拨打我司24小时服务报案电话95393。
+		</div>
+		<a href="javascript:void(0);" class="buy" id="buyBottom">我要购买</a>
+
+	</div>
+
+
+
+
+
+
+	<!-- 第三方插件 -->
+	<script src="//test.do4u.com.cn/ae/group/public/lib/date.js"></script>
+	<script src="//test.do4u.com.cn/ae/group/public/lib/jquery/plugins/jquery.blockUI.js"></script>
+	<script src="//test.do4u.com.cn/ae/group/public/lib/jquery/plugins/validation/jquery.validate.1.11.1.min.js"></script>
+	<script src="//test.do4u.com.cn/ae/group/public/lib/jquery/plugins/validation/additional-methods.js"></script>
+	<script src="//test.do4u.com.cn/ae/group/public/lib/jquery/plugins/validation/common-custom-methods.js"></script>
+	<script src="//test.do4u.com.cn/ae/group/public/lib/jquery/plugins/validation/localization/messages_zh.js"></script>
+	<script src="//test.do4u.com.cn/ae/group/public/lib/artTemplate/template.js"></script>
+	<script type="text/javascript" src="//test.do4u.com.cn/ae/insure/static/public/js/jquery.popup.pc.js"></script>
+
+	<!-- 接口处理器 -->
+	<script type="text/javascript" src="//test.do4u.com.cn/ae/insure/static/interface/interface.js"></script>
+	<!-- 公共脚本 -->
+	<script type="text/javascript" src="//test.do4u.com.cn/ae/insure/static/public/js/common.js"></script>
+	<!-- 保费计算公共脚本 -->
+	<script type="text/javascript" src="//test.do4u.com.cn/ae/insure/static/public/js/quote-common.js"></script>
+	<!-- pc加载动画 -->
+	<script type="text/javascript" src="//test.do4u.com.cn/ae/insure/static/personal/pc/js/loading.js"></script>
+	<!-- 保费计算 -->
+	<!-- <script type="text/javascript" src="//test.do4u.com.cn/ae/insure/static/personal/pc/js/quote.js"></script> -->
+	<!-- 股东信息 -->
+	<script type="text/javascript" src="//test.do4u.com.cn/ae/insure/static/stockholderSelect/pc/block.js"></script>
+
+	<!--[if IE 8]>
+<script>
+	$(function () {
+		// 单选框兼容ie8
+		$('#southNetworkStaffLabel, #hasSocialSecurityLabel').addClass('checked')
+
+		$(".regular-radio").change(function () {
+			if ($(this).parent('.radio-wrapper').siblings('.radio-wrapper').children('.radio-label').hasClass("checked")) {
+				$(this).parent('.radio-wrapper').siblings('.radio-wrapper').children('.radio-label').removeClass("checked");
+				$(this).siblings('.radio-label').addClass("checked");
+			} else {
+				$(this).siblings('.radio-label').addClass("checked");
+			}
+		});
+
+		$('#readMeChk').change(function () {
+			if ($(this).is(':checked')){
+				$(this).next('label').addClass('checked')
+			}else {
+				$(this).next('label').removeClass('checked')
+			}
+		})
+	})
+</script>
+<![endif]-->
+
+	<!-- <div id="informContentDiv" style="display:none;"><p>1、本保险由鼎和财产保险股份有限公司承保（以下简称“本公司”或“鼎和保险”），目前在广东、广西、云南、贵州、海南、深圳、四川、上海、湖北、河南、江西、陕西、山东、河北设有分支机构</p>
+				<p><span style="font-weight:bold">2、投保人续保本合同须经保险人审核同意。续保时保险人有权根据医疗费用水平变化、 本险种整体经营状况及被保险人年龄对费率等进行调整。在投保人接受费率等调整的前提下，保险人方可为投保人办理续保手续。续保合同与前一合同的保险期间在时间上不间断。续保合同不计算等待期。</span></p>
+				<p>3、投保人：18周岁以上有完全民事行为能力人，并与被保险人存在可保利益；<span style="font-weight:bold">仅限在中国大陆地区有固定居所的人士投保。</span></p>
+				<p>4、被保险人年龄：首次投保时年龄为30天至60周岁。本合同期满，投保人可向存在保险人申请续保本合同，投保人续保本合同须经保险人审核同意，最高可续保至80周岁。</p>
+				<p>5、被保险人职业类别须属于<span style="font-weight:bold"><a href="javascript:void(0);" class="download" style="display: inline;background: url(images/foldDown.png) 0px 5px no-repeat;padding-left: 0px;line-height: 20px;color: #446DAA;" protocol="webapppath:/file/doc/鼎和财险职业代码及分类表.pdf">《鼎和保险职业类别表》</a>中的1-4类人员，对于超出1-4类的但属于<a href="javascript:void(0);" class="download" style="display: inline;background: url(images/foldDown.png) 0px 5px no-repeat;padding-left: 0px;line-height: 20px;color: #446DAA;" protocol="webapppath:/file/doc/特殊职业类别表.pdf">《特殊职业类别表》</a> 的须为中国南方电网有限责任公司在编在册的正式员工。</span>。若被保险人不在1-4类职业或属于<a href="javascript:void(0);" class="download" style="display: inline;background: url(images/foldDown.png) 0px 5px no-repeat;padding-left: 0px;line-height: 20px;color: #446DAA;" protocol="webapppath:/file/doc/特殊职业类别表.pdf">《特殊职业类别表》</a> 中所列职业但不是中国南方电网有限责任公司在编在册的正式员工且购买的，发生保险事故保险公司将不予承担责任。</p>
+				<p>6、本产品保险期间：1年。</p>
+				<p>7、<span style="font-weight:bold">免赔额：本产品免赔额为每人1万元/年</span>，指在本合同保险期间内，应由被保险人自行承担，本合同不予赔付的部分。社保个人账户支付的金额和通过其他途径(包括被保险人的工作单位、保险人在内的任何商业保险机构)已报销赔付部分可计入免赔额，但社保统筹或公费医疗报销部分不能计入免赔额。若被保险人在等待期后经医院初次确诊罹患本合同约定的重大疾病且在医院接受住院治疗的，对于自确诊重大疾病之日起所发生的符合本合同约定的全部医疗费用，保险人在给付保险金时，不再扣除免赔额。</p>
+				<p>8、<span style="font-weight:bold">赔付比例</span>：100%。若被保险人以参加社会医疗保险身份投保，但未以参加社会医疗保险身份就诊并结算的，则保险人按照60%的给付比例进行赔付。</p>
+				<p>9、<span style="font-weight:bold">等待期</span>：被保险人首次投保或非续保时，本合同约定的重大疾病等待期为60天，但甲状腺、扁桃体、疝气、女性生殖系统疾病的检查与治理等待期为90天，其他责任等待期为30天，意外医疗及续保无等待期。</p>
+				<p>10、被保险人持其他保险公司医疗险保单（指保险责任包含但不限于一般住院医疗费用和恶性肿瘤/重大疾病住院医疗费用，且保额在100万及以上的），无任何理赔记录，且在投保本产品时，被保险人符合本产品的健康告知，其已经度过的等待期天数可累积到本产品约定的等待期内计算。</p>
+				<p>11、就诊医院:中华人民共和国境内(不含港、澳、台地区)二级及以上<span style="font-weight:bold">公立医院普通部</span>。</p>
+				<p>12、社会医疗保险：是指包括新型农村合作医疗、城镇职工基本医疗保险、城镇居民基本医疗保险等政府举办的基本医疗保障项目。</p>
+				<p>13、<span style="font-weight:bold">每一被保险人限投保一份</span>，多投保无效。</p>
+				<p>14、本产品保单最早生效日期为投保成功的次日零时。</p>
+				<p>15、请确认您已认真阅读《鼎和财产保险股份有限公司个人医疗保险条款（2018版）》，您了解、同意并确认上述条款内容，特别是保险责任及责任免除的部分。作为投保人，您确认对于被保险人具有保险利益。购买本产品即表示投保人同意接受本产品条款及投保须知的全部内容。</p>
+				<p>16、投保前，须阅读并了解本保险各分计划对应的适用保险条款，请务必阅读其中的责任免除部分。以下为免责条款。
+					<br><span style="font-weight:bold">因下列情形之一导致被保险人支出医疗费用的或发生如下列明的医疗费用，保险人不承担保险金给付责任： </span>
+					<br><span style="font-weight:bold">（一）投保人对被保险人的故意杀害或故意伤害；</span>
+					<br><span style="font-weight:bold">（二）被保险人故意犯罪、抗拒依法采取的刑事强制措施；被政府依法拘禁或入狱期间；</span>
+					<br><span style="font-weight:bold">（三）被保险人自杀，但被保险人自杀时为无民事行为能力人的除外；</span>
+					<br><span style="font-weight:bold">（四）被保险人故意自伤或因被保险人挑衅或故意行为而导致的打斗、被袭击、被谋杀；</span>
+					<br><span style="font-weight:bold">（五）被保险人酒后驾驶、无有效驾驶证驾驶或者驾驶无有效行驶证的机动交通工具；</span>
+					<br><span style="font-weight:bold">（六）被保险人受酒精或毒品的影响，或未遵医嘱，擅自服用、涂用、注射药物；</span>
+					<br><span style="font-weight:bold">（七）被保险人在本合同生效日前所患既往症及保单中特别约定的除外疾病；</span>
+					<br><span style="font-weight:bold">（八）等待期内被保险人发生的医疗费用； </span>
+					<br><span style="font-weight:bold">（九）等待期内被保险人已经发生的疾病、症状或病理改变且延续到等待期以后进行的任何诊断或治疗所发生的医疗费用；</span>
+					<br><span style="font-weight:bold">（十）所发生的费用已在其他保险凭证、保险单或社会保险计划中得到赔付的部分，或被保险人支出的医疗费用中依法应由第三者赔偿的部分；</span>
+					<br><span style="font-weight:bold">（十一）被保险人在不符合本合同约定的医院就诊发生的医疗费用； </span>
+					<br><span style="font-weight:bold">（十二）被保险人患精神性疾病（依据世界卫生组织《疾病和有关健康问题的国际统计分类》（ICD10）分类为精神和行为障碍的疾病）；</span>
+					<br><span style="font-weight:bold">（十三）整形手术、美容或整容手术、变性手术及前述手术的并发症或因前述手术导致的医疗事故；</span>
+					<br><span style="font-weight:bold">（十四）被保险人患遗传性疾病，先天性畸形、变形或染色体异常（依据世界卫生组织《疾病和有关健康问题的国际统计分类》（ICD10）确定）； </span>
+					<br><span style="font-weight:bold">（十五）被保险人怀孕（含宫外孕）、流产、分娩（含剖腹产）、避孕、绝育手术、治疗不孕不育症、人工受孕及由此导致的并发症；</span>
+					<br><span style="font-weight:bold">（十六）牙科疾病及相关治疗，视力矫正手术，但因意外所致的不受此限；</span>
+					<br><span style="font-weight:bold">（十七）如下项目的治疗：皮肤色素沉着、痤疮治疗、红斑痤疮治疗：雀斑、老年斑、痣的治疗和去除：对浅表静脉曲张、蜘蛛脉、除瘢痕疙瘩型外的其他瘢痕、纹身去除、皮肤变色的治疗或手术：激光美容、除皱、除眼袋、开双眼皮、治疗斑秃、白发、秃发、脱发、植毛、脱毛、隆鼻、隆胸；</span>
+					<br><span style="font-weight:bold">（十八）包皮环切术、包皮剥离术、包皮气囊扩张术、性功能障碍治疗；</span>
+					<br><span style="font-weight:bold">（十九）耐用医疗设备（指各种康复设备、矫形支具以及其他耐用医疗设备）的购买或租赁费用；</span>
+					<br><span style="font-weight:bold">（二十）被保险人因预防、康复、保健性或非疾病治疗类项目发生的医疗费用；眼镜、义齿、义眼、义肢、助听器等康复性器具，以及各种医疗咨询和健康预测：如健康咨询、睡眠咨询、性咨询、心理咨询（依照世界卫生组织《疾病和有关健康问题的国际统计分类》（ICD-10）确定的精神和行为障碍以外的一般心理问题，如职场问题、家庭问题、婚恋问题、个人发展、情绪管理等）等费用；</span>
+					<br><span style="font-weight:bold">（二十一）除心脏瓣膜、人工晶体、人工关节之外的其他人工器官材料费、安装和置换等费用、各种康复治疗器械、假体、义肢、自用的按摩保健和治疗用品、所有非处方医疗器械；</span>
+					<br><span style="font-weight:bold">（二十二）未经医生处方自行购买的药品或非医院药房购买的药品、滋补类中草药及其泡制的各类酒制剂、医生开具的超过30天部分的药品费用；</span>
+					<br><span style="font-weight:bold">（二十三）由于职业病、医疗事故引起的医疗费用；</span>
+					<br><span style="font-weight:bold">（二十四）不符合入院标准、挂床住院或住院病人应当出院而拒不出院（从医院确定出院之日起发生的一切医疗费用）；</span>
+					<br><span style="font-weight:bold">（二十五）被保险人接受实验性治疗，即未经科学或医学认可的医疗；</span>
+					<br><span style="font-weight:bold">（二十六）未被治疗所在地权威部门批准的治疗，未获得治疗所在地政府许可或批准的药品或药物；</span>
+					<br><span style="font-weight:bold">（二十七）各类医疗鉴定，包括但不限于医疗事故鉴定、精神病鉴定、孕妇胎儿性别鉴定、验伤鉴定、亲子鉴定、遗传基因鉴定费用。 </span>
+					<br><span style="font-weight:bold">（二十八）被保险人从事职业运动或可获得报酬的运动或竞技，在训练或比赛中受伤；被保险人从事或参加高风险运动，如：潜水、滑水、冲浪、赛艇、漂流、跳伞或其他高空运动、蹦极、乘坐或驾驶商业民航班机以外的飞行器、攀岩、攀登海拔3500米以上的独立山峰、滑雪、武术、摔跤、马术、赛马、赛车、特技表演（含训练）、替身表演（含训练）、探险或考察活动（洞穴、极地、沙漠、火山、冰川等等）； </span>
+					<br><span style="font-weight:bold">（二十九）被保险人感染艾滋病病毒或患艾滋病；</span>
+					<br><span style="font-weight:bold">（三十）战争、军事行动、暴乱或者武装叛乱；</span>
+					<br><span style="font-weight:bold">（三十一）核爆炸、核辐射或者核污染；</span>
+					<br><span style="font-weight:bold">（三十二）保险单中载明的应由被保险人自行承担的免赔额。</span>
+				</p>
+				<p>17、保单查询：本合同采用电子保单形式承保，您可以通过下列方式查询保单。
+					<br>（1）登录鼎和官网www.edhic.com、 “鼎和保险”微信公众号查看。
+					<br>（2）拨打客服电话95393/4009006666进行查询。
+				</p>
+				<p>18、投保：投保人填写个人投保信息并勾选需要的保险计划，核保通过后，投保人可通过支付宝、银行卡等支付方式缴纳保费至鼎和保险指定账户，保险合同成立。</p>
+				<p>19、承保：鼎和实时接收客户投保信息，并由系统实时完成核保，核保通过且保费到账后进行保险承保。</p>
+				<p>20、退保/批改：请通过线下机构柜面进行申请，按要求提供相关资料，审核通过后完成办理。</p>
+				<p>21、理赔：出险后尽快拨打客服电话95393进行报案，根据指示提交理赔资料。</p>
+				<p>22、根据《中华人民共和国合同法》第十一条规定，数据电文是合法的合同表现形式。投保人投保本保险时视为接受以鼎和保险提供的电子保单作为本投保书成立的合法有效凭证，具有完全证据效力。</p>
+				<p>23、我们严格遵守现行的关于个人信息、数据及隐私保护的法律法规，采取充分的技术手段和制度管理，保护您提供给我们的个人信息、数据和隐私不受到非法的泄露或披露给未获授权的第三方。</p>
+				<p>24、在投保本产品前您应履行相应的如实告知义务，具体如下：投保人或被保险人应如实填写投保信息，并就保险公司提出的询问据实告知，否则保险公司有权根据《中华人民共和国保险法》第十六条的规定解除保险合同且不承担赔偿责任；订立保险合同时，保险公司就保险标的或者被保险人的有关情况提出询问的，投保人应当如实告知。投保人故意或者因重大过失未履行前款规定的如实告知义务，足以影响保险公司决定是否同意承保或者提高保险费率的，保险公司有权解除合同。投保人故意不履行如实告知义务的，保险公司对于合同解除前发生的保险事故，不承担赔偿责任，并不退还保险费。投保人因重大过失未履行如实告知义务，对保险事故的发生有严重影响的，保险公司对于合同解除前发生的保险事故，不承担赔偿责任，但退还保险费。</p>
+				<p>25、如需变更保单信息、咨询保险产品相关事宜、理赔信息，请联系鼎和保险客户服务及投诉热线：95393。</p></div>
+ -->
+</body>
+
+<script src="/webeye/sdk/webrecord.js?token=test_img_20200718"></script>
+<script type="text/javascript">
+$(function () {
+    
+    WebEye.record({
+        nodeCode:"ProductBrowse",
+        pageId: "ProductBrowse_6102_v3",
+        productCode: "6102_v3",
+        productName:"安康福医疗险";
+        userId: "test_img",
+    }).start();
+    
+    WebEye.capture("ProductBrowse");
+})
+
+</script>
+</html>

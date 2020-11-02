@@ -1,23 +1,13 @@
 package com.mini.cloud.app.modules.base.entity;
 
-//
-//import com.baomidou.mybatisplus.annotation.TableName;
-//
-//import com.baomidou.mybatisplus.annotation.IdType;
-//
-//import com.mini.cloud.common.bean.BaseEntity;
-//
-//import java.time.LocalDateTime;
-//
-//import com.baomidou.mybatisplus.annotation.TableId;
-//
-import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
-import java.time.LocalDateTime;
+import com.baomidou.mybatisplus.annotation.TableName;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import io.swagger.annotations.ApiModelProperty;
+
+import java.time.LocalDateTime;
 
 /**
  * <p>

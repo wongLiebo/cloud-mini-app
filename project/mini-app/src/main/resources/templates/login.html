@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <title>WebEye管理系统</title>
+    <meta name="description" content="WebEye台管理框架">
+    <link href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+    <link href="../static/css/font-awesome.min.css" th:href="@{/css/font-awesome.min.css}" rel="stylesheet" />
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+    <link href="../static/css/login.min.css" th:href="@{/css/login.css}" rel="stylesheet" />
+    <link href="../static/webeye/css/eye-ui.css" th:href="@{/webeye/css/eye-ui.css?v=4.1.0}" rel="stylesheet" />
+    <!--[if lt IE 9]>
+    <meta http-equiv="refresh" content="0;ie.html" />
+    <![endif]-->
+    <link rel="shortcut icon" href="../static/favicon.ico" th:href="@{favicon.ico}" />
+    <style type="text/css">
+        label.error {
+            position: inherit;
+        }
+    </style>
+    <script>
+        if (window.top !== window.self) { window.top.location = window.location };
+    </script>
+</head>
+
+<body class="signin">
+
+<div class="signinpanel">
+    <div class="row">
+        <!-- <div class="col-sm-7">
+          <div class="signin-info">
+            <div class="logopanel m-b">
+              <h1><img alt="" src="../static/img/webeye.png" th:src="@{/img/logo.png}"></h1>
+            </div>
+            <div class="m-b"></div>
+            <h3>欢迎使用 <strong>小程序管理后台</strong></h3>
+            <ul class="m-b">
+              <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i> SpringBoot</li>
+              <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i> Mybatis</li>
+              <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i> Shiro</li>
+              <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i> Thymeleaf</li>
+              <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i> Bootstrap</li>
+            </ul>
+
+          </div>
+        </div> -->
+        <form id="signupForm">
+
+            <div class="no-qrcode main-body ">
+                <div class="new-login">
+                    <div class="top">
+                        小程序管理后台
+                        <span class="bg1"></span>
+                        <span class="bg2"></span>
+                    </div>
+                    <div class="bottom">
+                        <div class="center">
+                            <div class="item">
+                                <input type="text" name="username" class="form-control uname" placeholder="用户名" value="" />
+                            </div>
+                            <div class="item">
+                                <input type="password" name="password" class="form-control pword" placeholder="密码" value="" />
+                                <!-- 下面的方式有bug，已输入密码不会被清除
+                                 <input type="hidden" id="loginCode" name="loginCode" value=""/>
+                                 <input  type="text" name="pdmd5" id="loginPass" class="form-control pdmd5"  placeholder="请输入" value="" autocomplete="off" onkeyup="this.value=this.value.replace(/./g,'*');" onkeypress="javascript:hiddenPass(event)" onpaste="return false"/>
+                                -->
+                            </div>
+                            <div id="validatePanel" class="item row" style="margin:0"
+                                 th:if="${captchaEnabled==true}">
+                                <div class="col-xs-6" style="padding-left:0;">
+                                    <input type="text" name="validateCode" class="form-control code" placeholder="验证码" maxlength="5"
+                                           autocomplete="off" style="margin-top:8px;">
+                                </div>
+                                <div class="col-xs-6" style="padding-right:5px;">
+                                    <a href="javascript:void(0);" title="点击更换验证码">
+                                        <img th:src="@{captcha/captchaImage(type=${captchaType})}" class="imgcode" width="96%" />
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="checkbox-custom" th:classappend="${captchaEnabled==false} ? 'm-t'">
+                                    <input type="checkbox" id="rememberme" name="rememberme"> <label for="rememberme">记住我</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input id="rsaPublicKey" type="hidden" th:value="${rsaPublicKey}" />
+                        <button class="btn btn-success btn-block deal" id="btnSubmit" data-loading="正在验证登录，请稍后...">登录</button>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+
+    </div>
+    <div class="signup-footer">
+        <div class="pull-left">
+            &copy; 2020 All Rights Reserved. MiniApp <br>
+        </div>
+    </div>
+</div>
+<script th:inline="javascript"> var ctx = [[@{/}]]; var captchaType = [[${captchaType}]]; </script>
+<!-- 全局js -->
+<script src="../static/js/jquery.min.js" th:src="@{/js/jquery.min.js}"></script>
+<script src="../static/js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
+<!-- 验证插件 -->
+<script src="../static/ajax/libs/validate/jquery.validate.min.js" th:src="@{/ajax/libs/validate/jquery.validate.min.js}"></script>
+<script src="../static/ajax/libs/validate/messages_zh.min.js" th:src="@{/ajax/libs/validate/messages_zh.min.js}"></script>
+<script src="../static/ajax/libs/layer/layer.min.js" th:src="@{/ajax/libs/layer/layer.min.js}"></script>
+<script src="../static/ajax/libs/blockUI/jquery.blockUI.js" th:src="@{/ajax/libs/blockUI/jquery.blockUI.js}"></script>
+<script src="../static/webeye/js/eye-ui.js" th:src="@{/webeye/js/eye-ui.js?v=4.1.0}"></script>
+<script src="../static/js/aes.js" th:src="@{/js/aes.js}"></script>
+<script src="../static/js/jsencrypt.min.js" th:src="@{/js/jsencrypt.min.js}"></script>
+<script src="../static/js/security.js" th:src="@{/js/security.js}"></script>
+<script src="../static/js/random.js" th:src="@{/js/random.js}"></script>
+<script src="../static/webeye/login.js" th:src="@{/webeye/login.js}"></script>
+</body>
+
+</html>

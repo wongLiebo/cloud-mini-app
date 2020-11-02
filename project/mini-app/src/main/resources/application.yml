@@ -20,8 +20,14 @@ spring:
     multipart:
       max-file-size: 100MB
       max-request-size: 300MB
-  freemarker:
-    checkTemplateLocation: false
+#  freemarker:
+#    checkTemplateLocation: false
+  # 模板引擎
+  thymeleaf:
+    mode: HTML
+    encoding: utf-8
+    # 禁用缓存
+    cache: false
 
 mybatis-plus:
   mapper-locations: classpath*:mappers/*/*.xml

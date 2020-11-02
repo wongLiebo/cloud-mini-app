@@ -715,6 +715,54 @@ public class AliApiController extends AbstractController {
         }
     }
 
+    /**
+     * 小程序下架
+     * @throws AlipayApiException
+     */
+    @PostMapping("/openMiniVersionOffline")
+    @ApiOperation(value="小程序下架",response = AlipayOpenAuthTokenAppResponse.class)
+    public BaseResult openMiniVersionOffline(@RequestParam("version")String version) throws AlipayApiException {
+        AlipayClient alipayClient = this.getAlipayClient();
+
+        AlipayOpenMiniVersionOfflineRequest request = new AlipayOpenMiniVersionOfflineRequest();
+        request.setBizContent("{" +
+                "\"app_version\":\""+version+"\"," +
+                "\"bundle_id\":\"com.alipay.alipaywallet\"" +
+                "  }");
+        request.putOtherTextParam("app_auth_token", AlipayConstants.APP_AUTH_TOKEN);
+
+        AlipayOpenMiniVersionOfflineResponse response = alipayClient.execute(request);
+        if(response.isSuccess()){
+            System.out.println("调用成功"+JSON.toJSONString(response));
+            return BaseResult.ok(response);
+        } else {
+            System.out.println("调用失败"+JSON.toJSONString(response));
+            return BaseResult.error();
+        }
+    }
+
+
+    /**
+     * 小程序版本列表
+     * @throws AlipayApiException
+     */
+    @PostMapping("/openMiniVersionListQuery")
+    @ApiOperation(value="小程序版本列表",response = AlipayOpenAuthTokenAppResponse.class)
+    public BaseResult openMiniVersionListQuery() throws AlipayApiException {
+        AlipayClient alipayClient = this.getAlipayClient();
+
+        AlipayOpenMiniVersionListQueryRequest request = new AlipayOpenMiniVersionListQueryRequest();
+        request.putOtherTextParam("app_auth_token", AlipayConstants.APP_AUTH_TOKEN);
+        AlipayOpenMiniVersionListQueryResponse response = alipayClient.execute(request);
+        if(response.isSuccess()){
+            System.out.println("调用成功"+JSON.toJSONString(response));
+            return BaseResult.ok(response);
+        } else {
+            System.out.println("调用失败"+JSON.toJSONString(response));
+            return BaseResult.error();
+        }
+    }
+
 
 
 
